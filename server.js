@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv').config();
 const app = express();
-const HTTP_PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8080
 const SitesDB = require("./modules/sitesDB.js");
 const db = new SitesDB();
 
@@ -65,8 +65,8 @@ app.post("/api/sites", async (req, res) => {
 
 
 db.initialize(process.env.MONGODB_CONN_STRING).then(()=>{
-    app.listen(HTTP_PORT, ()=>{
-    console.log(`server listening on: ${HTTP_PORT}`);
+    app.listen(PORT, ()=>{
+    console.log(`server listening on: ${PORT}`);
     });
     }).catch((err)=>{
     console.log(err);
