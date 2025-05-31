@@ -7,7 +7,7 @@ const SitesDB = require("./modules/sitesDB.js");
 const db = new SitesDB();
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json()); //
 
 app.get('/', (req, res) => {
     res.json({
